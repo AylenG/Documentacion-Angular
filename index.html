@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Documentación Angular</title>
+</head>
+
+<body>
+    <nav id="navbar" class="navbar">
+        <!-- Con esto se crea el ícono de"hamburguesa" para desplegar el menú -->
+        <!-- <div class="toggle-btn">
+            <span class="toggle-btn-icon">&#9776;</span>
+        </div> -->
+
+        <header class="navbar-tema">
+            <h1 class="navbar-titulo">Documentación</h1>
+            <img class="navbar-img" src="./assets/angular.png" alt="Angular">
+        </header>
+
+        <ul class="menu">
+            <li class="menu-item"><a href="#Introduccion" class="nav-link">Introduccion</a></li>
+            <li class="menu-item"><a href="#Instalacion" class="nav-link">Instalacion</a></li>
+            <li class="menu-item"><a href="#Conceptos_basicos" class="nav-link">Conceptos basicos</a></li>
+            <li class="menu-item"><a href="#Modulos" class="nav-link">Modulos</a></li>
+            <li class="menu-item"><a href="#Componentes" class="nav-link">Componentes</a></li>
+            <!-- <li class="menu-item"><a href="#Servicios_de_ID" class="nav-link">Servicios de ID</a></li>
+            <li class="menu-item"><a href="#Proximos_pasos" class="nav-link">Proximos pasos</a></li> -->
+            <li class="menu-item"><a href="#Referencia" class="nav-link">Referencia</a></li>
+        </ul>
+    </nav>
+
+    <main id="main-doc" class="main">
+        <section class="main-section" id="Introduccion">
+            <header class="main-title">
+                <h2>Introduccion</h2>
+            </header>
+            <p>Angular es un framework de diseño de aplicaciones y plataforma de desarrollo para crear aplicaciones
+                de una sola página eficientes y sofisticadas.</p>
+
+            <p>Esta documentación de Angular te ayuda a aprender y usar el framework y la plataforma de desarrollo,
+                desde tu primera aplicación hasta la optimización de aplicaciones complejas de una sola página, para
+                empresas. Los tutoriales y guías incluyen ejemplos descargables para acelerar tus proyectos.</p>
+        </section>
+
+        <section class="main-section" id="Instalacion">
+            <header class="main-title">
+                <h2>Instalacion</h2>
+            </header>
+            <h3>Prerrequisitos</h3>
+
+            <p>Para usar el framewok Angular, debes estar familiarizado con lo siguiente:</p>
+
+            <ul>
+                <li>JavaScript</li>
+                <li>HTML</li>
+                <li>CSS</li>
+            </ul>
+
+            <p>Conocimiento de TypeScript es útil, pero no obligatorio.</p>
+            <p>Para instalar Angular en tu sistema local, necesitas lo siguiente:</p>
+
+            <ul>
+                <li>Node.js</li>
+                <li>npm package manager (incluído en Node.js)</li>
+            </ul>
+
+            <h3>Instalar la CLI de Angular</h3>
+
+            <p>Utilizarás la CLI de Angular para crear proyectos, generar código de aplicaciones y bibliotecas, y
+                realizar una variedad de tareas de desarrollo, como pruebas, agrupación e implementación.<br><br>
+                Para instalar CLI de Angular, abre una terminal y ejecuta el siguiente comando:</p>
+
+            <div class="contenedor-code">
+                <code class="code">npm install -g @angular/cli</code>
+            </div>
+
+            <h3>Crea un espacio de trabajo y una aplicación inicial</h3>
+
+            <p>Desarrollas aplicaciones en el contexto de un espacio de trabajo de Angular.<br><br>
+                Para crear un nuevo espacio de trabajo y una aplicación inicial:</p>
+            <ol>
+                <li>
+                    Ejecuta el comando CLI <code class="code">ng new</code> y proporciona el nombre my-app, como se
+                    muestra aquí:
+                    <div class="contenedor-code">
+                        <code class="code">ng new my-app</code>
+                    </div>
+                </li>
+                <li>El comando <code class="code">ng new</code> te solicitará información sobre las funciones que debe
+                    incluir en la
+                    aplicación inicial. Acepta los valores predeterminados presionando la tecla Enter o Return.</li>
+            </ol>
+
+            <p>La CLI de Angular instala los paquetes npm de Angular necesarios y otras dependencias. Esto puede
+                tardar unos minutos.</p>
+            <p>La CLI crea un nuevo espacio de trabajo y una aplicación de bienvenida simple, lista para ejecutarse.
+            </p>
+
+            <h3>Ejecutar la aplicación</h3>
+
+            <p>La CLI de Angular incluye un servidor, de modo que puede crear y servir su aplicación localmente.</p>
+
+            <ol>
+                <li>Navega a la carpeta del espacio de trabajo, como my-app.</li>
+                <li>Ejecuta el siguiente comando:
+                    <div class="contenedor-code">
+                        <code class="code">
+                        cd my-app<br>
+                        ng serve --open</code>
+                    </div>
+                </li>
+            </ol>
+
+            <p>El comando ng serve inicia el servidor, observa tus archivos, y reconstruye la aplicación a medida
+                que realizas cambios en esos archivos.
+                <br>
+                La opción <code class="code">--open</code> (o simplemente-o) abre automáticamente tu navegador en <code
+                    class="code">http://localhost:4200/</code>.
+            </p>
+        </section>
+
+        <section class="main-section" id="Conceptos_basicos">
+            <header class="main-title">
+                <h2>Conceptos basicos</h2>
+            </header>
+            <p>Angular es una plataforma y un framework para crear aplicaciones de una sola página en el lado del
+                cliente usando HTML y TypeScript. Angular está escrito en TypeScript. Implementa la funcionalidad básica
+                y opcional como un conjunto de bibliotecas TypeScript que importas en tus aplicaciones.</p>
+
+            <p>La arquitectura de una aplicación en Angular se basa en ciertos conceptos fundamentales. Los bloques de
+                construcción básicos son los NgModules, que proporcionan un contexto de compilación para los
+                componentes. Los NgModules recopilan código relacionado en conjuntos funcionales; una aplicación de
+                Angular se define por un conjunto de NgModules. Una aplicación siempre tiene al menos un módulo raíz que
+                permite el arranque y generalmente tiene muchos más módulos de funcionalidad.</p>
+
+            <ul>
+                <li>Los componentes definen vistas, que son conjuntos de elementos de la pantalla que Angular puede
+                    elegir y modificar de acuerdo con la lógica y los datos de tu programa.</li>
+                <li>Los componentes usan servicios, los cuales proporcionan una funcionalidad específica que no está
+                    directamente relacionada con las vistas. Los proveedores de servicios pueden inyectarse en
+                    componentes como dependencias, haciendo que tu código sea modular, reutilizable y eficiente.</li>
+            </ul>
+
+            <p>Los módulos, componentes y servicios son clases que usan decoradores. Estos decoradores indican su tipo y
+                proporcionan metadatos que le indican a Angular cómo usarlos.</p>
+
+            <ul>
+                <li>Los metadatos para una clase componente son asociados con una plantilla que define una vista. Una
+                    plantilla combina HTML ordinario con directivas de Angular y enlace markup que permiten a Angular
+                    modificar el HTML antes de mostrarlo para su visualización.</li>
+                <li>Los metadatos para una clase servicio proporcionan la información que Angular necesita para que esté
+                    disponible para los componentes a través de la Inyección de Dependencia (ID).</li>
+            </ul>
+
+            <p>Los componentes de una aplicación suelen definir muchas vistas, ordenadas jerárquicamente. Angular
+                proporciona el servicio Router para ayudarte a definir rutas de navegación entre vistas. El enrutador
+                proporciona capacidades de navegación sofisticadas en el navegador.</p>
+
+            <h3>Módulos</h3>
+
+            <p>Los <i>NgModules</i> de Angular difieren y complementan los módulos JavaScript (ES2015). Un NgModule
+                declara un
+                contexto de compilación para un conjunto de componentes que está dedicado a un dominio de aplicación, un
+                flujo de trabajo o un conjunto de capacidades estrechamente relacionadas. Un NgModule puede asociar sus
+                componentes con código relacionado, como servicios, para formar unidades funcionales.</p>
+
+            <p>Cada aplicación en Angular tiene un <i>módulo raíz</i>, convencionalmente nombrado <code
+                    class="code">AppModule</code>, que proporciona el mecanismo de arranque que inicia la aplicación.
+                Una aplicación generalmente contiene muchos módulos funcionales.</p>
+
+            <p>Como en los módulos de JavaScript, los NgModules pueden importar la funcionalidad de otros, y permiten
+                que su propia funcionalidad sea exportada y utilizada por otros NgModules. Por ejemplo, para utilizar el
+                servicio de enrutamiento en su aplicación, importa el NgModule Router.</p>
+
+            <p>Organizar tu código en distintos módulos funcionales ayuda a gestionar el desarrollo de aplicaciones
+                complejas, y en el diseño para su reutilización. Además, esta técnica te permite aprovechar la <i>carga
+                    diferida</i>—es decir, cargar módulos bajo demanda—para minimizar la cantidad de código que debe
+                cargarse al inicio.</p>
+
+            <h3>Componentes</h3>
+
+            <p>Cada aplicación de Angular tiene al menos un componente, el <i>componente raíz</i> que conecta una
+                jerarquía de componentes con el modelo de objetos del documento de la página (DOM). Cada componente
+                define una clase que contiene datos y lógica de la aplicación, y está asociado con una <i>plantilla</i>
+                HTML que define una vista que se mostrará en un entorno de destino.</p>
+
+            <p>El decorador <code>@Component()</code> identifica la clase inmediatamente debajo de ella como un
+                componente, y proporciona la plantilla y los metadatos específicos del componente relacionado.</p>
+
+            <h3>Plantillas, directivas y enlace de datos</h3>
+
+            <p>Una plantilla combina HTML con markup de Angular que puede modificar elementos HTML antes de que se
+                muestren. Las <i>directivas</i> de la plantilla proporcionan la lógica de programa y el <i>enlace
+                    markup</i> conecta los datos de tu aplicación y el DOM. Hay dos tipos de enlace de datos:</p>
+
+            <ul>
+                <li><i>Manejador de eventos</i> permite que tu aplicación responda a la entrada del usuario en el
+                    entorno objetivo actualizando los datos de tu aplicación.</li>
+                <li><i>Vincular propiedades</i> te permite interpolar valores que se calculan a partir de los datos de
+                    tu aplicación en HTML.</li>
+            </ul>
+
+            <p>Antes de mostrar una vista, Angular evalúa las directivas y resuelve la sintaxis de enlace en la
+                plantilla para modificar los elementos HTML y el DOM, de acuerdo con los datos y la lógica de tu
+                programa. Angular soporta <i>enlace de datos en dos sentidos</i>, lo que significa que los cambios en el
+                DOM, como las elecciones del usuario, también se reflejan en los datos de su programa.</p>
+
+            <p>Tus plantillas pueden usar <i>pipes</i> para mejorar la experiencia del usuario mediante la
+                transformación de valores para mostrar. Por ejemplo, usa pipes para mostrar fechas y valores de moneda
+                que sean apropiados para la configuración regional de un usuario. Angular proporciona pipes predefinidas
+                para transformaciones comunes, y también puedes definir tus propias pipes.</p>
+
+            <h3>Servicios e inyección de dependencia</h3>
+
+            <p>Para los datos o la lógica que no están asociados con una vista específica y que deseas compartir entre
+                componentes, crea una clase <i>servicio</i>. Una definición de clase servicio está inmediatamente
+                precedida por el decorador <code class="code">@Injectable()</code>. El decorador proporciona los
+                metadatos que permiten <b>inyectar</b> otros proveedores como dependencias en su clase.</p>
+
+            <p><i>Inyección de Dependecia</i> (ID) te permite mantener sus clases componente ligeras y eficientes. No
+                obtienen datos del servidor, validan la entrada del usuario o registra directamente en la consola; tales
+                tareas son delegadas a los servicios.</p>
+
+            <h3>Enrutamiento</h3>
+
+            <p>El NgModule <code class="code">Router</code> de Angular proporciona un servicio que te permite definir
+                una ruta de navegación entre los diferentes estados de la aplicación y ver sus jerarquías. Se basa en
+                las convenciones frecuentes de navegación del navegador:</p>
+
+            <ul>
+                <li>Ingresa una URL en la barra de direcciones para que el navegador vaya a la página correspondiente.
+                </li>
+                <li>Haz clic en los enlaces de la página para que el navegador vaya a una nueva página.</li>
+                <li>Haz clic en los botones atrás y adelante del navegador para que el navegador vaya hacia atrás y
+                    hacia adelante a través del historial de las páginas que has visto.</li>
+            </ul>
+
+            <p>El enrutador mapea rutas similares a URL para las vistas en lugar de páginas. Cuando un usuario realiza
+                una acción, como hacer clic en un enlace, que cargaría una nueva página en el navegador, el enrutador
+                intercepta el comportamiento del navegador y muestra u oculta las jerarquías de vista.</p>
+
+            <p>Si el enrutador determina que el estado actual de la aplicación requiere una funcionalidad particular, y
+                el módulo que lo define no se ha cargado, el enrutador puede hacer <i>carga diferida</i> sobre el módulo
+                bajo demanda.</p>
+
+            <p>El enrutador interpreta una URL de enlace de acuerdo con las reglas de navegación de visualización de la
+                aplicación y el estado de los datos. Puedes navegar a las nuevas vistas cuando el usuario hace clic en
+                un botón o selecciona desde un cuadro desplegable, o en respuesta a algún otro estímulo de cualquier
+                fuente. El enrutador registra la actividad en el historial del navegador, por lo que los botones de
+                retroceso y avance también funcionan.</p>
+
+            <p>Para definir reglas de navegación, asocia <i>rutas de navegación</i> a tus componentes. Una ruta utiliza
+                una sintaxis similar a una URL que integra los datos de tu programa, de la misma manera que la sintaxis
+                de la plantilla integra tus vistas con los datos de tu programa. Luego puedes aplicar la lógica del
+                programa para elegir qué vistas mostrar u ocultar, en respuesta a la entrada del usuario y a tus propias
+                reglas de acceso.</p>
+
+            <h3>En resumen</h3>
+
+            <p>El siguiente diagrama muestra cómo se relacionan estos conceptos básicos:</p>
+
+            <div class="contenedor-code">
+                <!-- <img src="https://docs.angular.lat/generated/images/guide/architecture/overview2.png" alt="Diagrama de relación"> -->
+                <img src="./assets/diagrama.png" alt="Diagrama de relación">
+            </div>
+
+            <ul>
+                <li>
+                    Juntos, un componente y una plantilla definen una vista en Angular.
+                    <ul>
+                        <li>Un decorador en una clase componente agrega los metadatos, incluido un apuntador a la
+                            plantilla asociada.</li>
+                        <li>Las directivas y el enlace markup en la plantilla de un componente modifican las vistas
+                            basadas en los datos y la lógica del programa.</li>
+                    </ul>
+                </li>
+                <li>El inyector de dependencia proporciona servicios a un componente, como el servicio de enrutamiento
+                    que le permite definir la navegación entre vistas.</li>
+            </ul>
+
+            <p>Cada uno de estos temas se presenta con más detalle en las siguientes páginas.</p>
+        </section>
+
+        <section class="main-section" id="Modulos">
+            <header class="main-title">
+                <h2>Modulos</h2>
+            </header>
+
+            <p>Las aplicaciones Angular son modulares y Angular tiene su propio sistema de modularidad llamado
+                <i>NgModules</i>. Los NgModules son contenedores para un bloque cohesivo de código dedicado a un dominio
+                de aplicación, un flujo de trabajo o un conjunto de capacidades estrechamente relacionadas. Pueden
+                contener componentes, proveedores de servicios y otros archivos de código cuyo alcance está definido por
+                el NgModule que los contiene. Pueden importar la funcionalidad que se exporta desde otros NgModules y
+                exportar la funcionalidad seleccionada para que la utilicen otros NgModules.
+            </p>
+
+            <p>Cada aplicación Angular tiene al menos una clase NgModule, el módulo raíz, que se llama convencionalmente
+                <code class="code">AppModule</code> y reside en un archivo llamado <code
+                    class="code">app.module.ts</code>. Inicia tu aplicación cargando el NgModule raíz.
+            </p>
+
+            <p>Si bien una aplicación pequeña puede tener sólo un NgModule, la mayoría de las aplicaciones tienen muchos
+                más <i>módulos de funcionalidad</i>. El NgModule <i>raíz</i> para una aplicación se llama así porque
+                puede incluir NgModules secundarios en una jerarquía de cualquier profundidad.</p>
+
+            <h3>Metadatos de NgModule</h3>
+
+            <p>Un NgModule está definido por una clase decorada con <code class="code">@NgModule()</code>. El decorador
+                <code class="code">@NgModule()</code> es una función que toma un único objeto de metadatos, cuyas
+                propiedades describen el módulo. Las propiedades más importantes son las siguientes.
+            </p>
+
+            <ul>
+                <li><code class="code">declarations</code>: Los componentes, directivas, y pipes que pertenecen a este
+                    NgModule.</li>
+                <li><code class="code">exports</code>: El subconjunto de declaraciones que deberían ser visibles y
+                    utilizables en las <i>plantillas de componentes</i> de otros NgModules.</li>
+                <li><code class="code">imports</code>: Otros módulos cuyas clases exportadas son necesarias para las
+                    plantillas de componentes declaradas en este NgModule.</li>
+                <li><code class="code">providers</code>: Creadores de servicios que este NgModule aporta a la colección
+                    global de servicios; se vuelven accesibles en todas las partes de la aplicación. (También puedes
+                    especificar proveedores a nivel de componente, que a menudo es preferido).</li>
+                <li><code class="code">bootstrap</code>: La vista principal de la aplicación, llamado el <i>componente
+                        raíz</i>, que aloja todas las demás vistas de la aplicación. Sólo el <i>NgModule raíz</i> debe
+                    establecer la propiedad <code class="code">bootstrap</code>.</li>
+            </ul>
+
+            <p>Aquí hay una definición simple del NgModule raíz. (src/app/app.module.ts)</p>
+
+            <div class="contenedor-code">
+                <code class="code">
+                import { NgModule } from '@angular/core';<br>
+                import { BrowserModule } from '@angular/platform-browser';<br>
+                @NgModule({<br>
+                   imports:      [ BrowserModule ],<br>
+                   providers:    [ Logger ],<br>
+                   declarations: [ AppComponent ],<br>
+                   exports:      [ AppComponent ],<br>
+                   bootstrap:    [ AppComponent ]<br>
+                })<br>
+                export class AppModule { }
+            </code>
+            </div>
+
+            <p>Aquí se incluye AppComponent en la lista de exports como ilustración; en realidad no es necesario en este
+                ejemplo. Un NgModule raíz no tiene ninguna razón para exportar nada porque otros módulos no necesitan
+                importar el NgModule raíz.</p>
+
+            <h3>NgModules y componentes</h3>
+
+            <p>NgModules proporciona un <i>contexto de compilación</i> para sus componentes. Un NgModule raíz siempre
+                tiene un componente raíz que se crea durante el arranque, pero cualquier NgModule puede incluir
+                cualquier cantidad de componentes adicionales, que se pueden cargar a través del enrutador o crear a
+                través de la plantilla. Los componentes que pertenecen a un NgModule comparten un contexto de
+                compilación.</p>
+
+            <div class="contenedor-code">
+                <!-- <img src="https://docs.angular.lat/generated/images/guide/architecture/compilation-context.png" alt="Contexto de compilación"> -->
+                <img src="./assets/contexto-compilacion.png" alt="Contexto de compilación">
+            </div>
+
+            <p>Juntos, un componente y su plantilla definen una <i>vista</i>. Un componente puede contener una
+                <i>jerarquía de vista</i>, que te permiten definir áreas arbitrariamente complejas de la pantalla que se
+                pueden crear, modificar y destruir como una unidad. Una jerarquía de vistas puede mezclar vistas
+                definidas en componentes que pertenecen a diferentes NgModules. Este suele ser el caso, especialmente
+                para las bibliotecas de interfaz de usuario.
+            </p>
+
+            <div class="contenedor-code">
+                <!-- <img src="https://docs.angular.lat/generated/images/guide/architecture/view-hierarchy.png" alt="Jerarquía de vista"> -->
+                <img src="./assets/jerarquia-de-vista.png" alt="Jerarquía de vista">
+            </div>
+
+            <p>Cuando creas un componente, se asocia directamente con una sola vista, llamada <i>vista host</i>. La
+                vista host puede ser la raíz de una jerarquía de vistas, que puede contener <i>vistas incrustadas</i>,
+                que a su vez son las vistas de host de otros componentes. Esos componentes pueden estar en el mismo
+                NgModule o pueden importarse desde otros NgModules. Las vistas en el árbol se pueden anidar a cualquier
+                profundidad.</p>
+
+            <h3>NgModules y módulos JavaScript</h3>
+
+            <p>El sistema NgModule es diferente y no está relacionado con el sistema de módulos JavaScript (ES2015) para
+                administrar colecciones de objetos JavaScript. Estos son sistemas de módulos <i>complementarios</i> que
+                puedes usar juntos para escribir tus aplicaciones.</p>
+
+            <p>En JavaScript, cada <i>archivo</i> es un módulo y todos los objetos definidos en el archivo pertenecen a
+                ese módulo. El módulo declara que algunos objetos son públicos marcándolos con la palabra clave export.
+                Otros módulos de JavaScript usan <i>declaraciones de importación</i> para acceder a objetos públicos de
+                otros módulos.</p>
+
+            <div class="contenedor-code">
+                <code class="code">
+                    import { NgModule } from '@angular/core';<br>
+                    import { AppComponent } from './app.component';
+                </code>
+            </div>
+
+            <div>
+                <code class="code">export class AppModule { }</code>
+            </div>
+
+            <h3>Bibliotecas Angular</h3>
+
+            <p>Angular se carga como una colección de módulos JavaScript. Puedes pensar en ellos como módulos de
+                biblioteca. Cada nombre de biblioteca de Angular comienza con el prefijo <code
+                    class="code">@angular</code>. Instálalos con el gestor de paquetes <code class="code">npm</code> e
+                importa partes de ellos con declaraciones <code class="code">import</code> de JavaScript.</p>
+
+            <p>Por ejemplo, importa el decorador <code class="code">Component</code> de Angular de la biblioteca <code
+                    class="code">@angular/core</code> como esta.</p>
+
+            <div class="contenedor-code">
+                <code class="code">
+                    import { Component } from '@angular/core';
+                </code>
+            </div>
+
+            <p>También importa NgModules desde las bibliotecas Angular usando declaraciones de importación de
+                JavaScript. Por ejemplo, el siguiente código importa el NgModule <code class="code">BrowserModule</code>
+                de la biblioteca <code class="code">platform-browser</code>.</p>
+
+            <code class="contenedor-code code">import { BrowserModule } from '@angular/platform-browser';</code>
+
+            <p>En el ejemplo del módulo raíz simple anterior, el módulo de la aplicación necesita material de <code
+                    class="code">BrowserModule</code>. Para acceder a ese material, agrégalo a los metadatos <code
+                    class="code">imports</code> de <code class="code">@NgModule</code> de esta manera.</p>
+
+            <code class="contenedor-code code">imports: [ BrowserModule ],</code>
+
+            <p>De esta manera, estás utilizando los sistemas de módulos Angular y JavaScript juntos. Aunque es fácil
+                confundir los dos sistemas, que comparten el vocabulario común de "importaciones" y "exportaciones", te
+                familiarizarás con los diferentes contextos en los que se utilizan.</p>
+        </section>
+
+        <section class="main-section" id="Componentes">
+            <header class="main-title">
+                <h2>Componentes</h2>
+            </header>
+
+            <p>Un <i>componente</i> controla una parte en pantalla llamada <i>vista</i>. Por ejemplo, los componentes
+                individuales definen y controlan cada una de las siguientes vistas del <a
+                    href="https://docs.angular.lat/tutorial" class="main-link">tutorial Tour of Heroes</a>:</p>
+
+            <ul>
+                <li>La raíz de la aplicación con los enlaces de navegación.</li>
+                <li>La lista de héroes.</li>
+                <li>El editor de héroe.</li>
+            </ul>
+
+            <p>Tu defines la lógica de aplicación de un componente — lo que hace para apoyar la vista — dentro de una
+                clase. La clase interactúa con la vista a través de una API de propiedades y métodos.</p>
+
+            <p>Por ejemplo, <code class="code">HeroListComponent</code> tiene una propiedad <code
+                    class="code">heroes</code> que contiene un array de héroes. Tu método <code
+                    class="code">selectHero()</code> establece una propiedad <code class="code">selectedHero</code>
+                cuando el usuario hace clic para elegir un héroe de esa lista. El componente adquiere los héroes desde
+                un servicio, que es una propiedad de parámetro de TypeScript en el constructor. El servicio es
+                proporcionado al componente a través del sistema de inyección de dependencias.</p>
+
+            <p>(src/app/hero-list.component.ts)</p>
+
+            <div class="contenedor-code">
+                <code class="code">
+                    export class HeroListComponent implements OnInit {<br>
+                        heroes: Hero[];<br>
+                        selectedHero: Hero;<br>
+                        <br>
+                        constructor(private service: HeroService) { }<br>
+                        <br>
+                        ngOnInit() {<br>
+                            this.heroes = this.service.getHeroes();<br>
+                        }<br>
+                        <br>
+                        selectHero(hero: Hero) { this.selectedHero = hero; }<br>
+                    }
+                </code>
+            </div>
+
+            <p>Angular crea, actualiza y destruye componentes a medida que el usuario se mueve por la aplicación. Tu
+                aplicación puede tomar medidas en cada momento de este ciclo de vida a través de enlaces de ciclo de
+                vida opcionales, como <code class="code">ngOnInit()</code>.</p>
+
+            <h3>Metadatos de componentes</h3>
+
+            <p>El decorador <code class="code">@Component</code> identifica la clase inmediatamente debajo de ella como
+                una clase de componente y especifica sus metadatos. En el código de ejemplo a continuación, puedes ver
+                que <code class="code">HeroListComponent</code> es solo una clase, sin ninguna notación o sintaxis de
+                angular especial. No es un componente hasta que lo marcas como uno con el decorador <code
+                    class="code">@Component</code>.</p>
+
+            <p>Los metadatos de un componente le dicen a Angular dónde obtener los bloques de construcción principales
+                que necesita para crear y presentar el componente y su vista. En particular, asocia una <i>plantilla</i>
+                con el componente, ya sea directamente con el código en línea o por referencia. Juntos, el componente y
+                su plantilla describen una <i>vista</i>.</p>
+
+            <p>Además de contener o apuntar a la plantilla, los metadatos de <code class="code">@Component</code>
+                configuran, por ejemplo, cómo puede ser referenciado en HTML el componente y qué servicios requiere.</p>
+
+            <p>Aquí hay un ejemplo de metadatos básicos para <code class="code">HeroListComponent</code>.
+                (src/app/hero-list.component.ts (metadata))</p>
+
+            <div class="contenedor-code">
+                <code class="code">
+                    @Component({<br>
+                        selector:    'app-hero-list',<br>
+                        templateUrl: './hero-list.component.html',<br>
+                        providers:  [ HeroService ]<br>
+                    })<br>
+                    export class HeroListComponent implements OnInit {<br>
+                    /* . . . */<br>
+                    }
+                </code>
+            </div>
+
+            <p>Este ejemplo muestra algunas de las opciones de configuración de <code class="code">@Component</code> más
+                útiles:</p>
+
+            <ul>
+                <li><code class="code">selector</code>: Un selector de CSS que le dice a Angular que cree e inserte una
+                    instancia de este componente siempre que encuentre la etiqueta correspondiente en la plantilla HTML.
+                    Por ejemplo, si el HTML de una aplicación contiene la etiqueta<code
+                        class="code">app-hero-list</code>, entonces Angular inserta una instancia de la vista <code
+                        class="code">HeroListComponent</code> entre esas etiquetas.</li>
+                <li><code class="code">templateUrl</code>: La dirección relativa al módulo de la plantilla HTML de este
+                    componente. Alternativamente, puede proporcionar la plantilla HTML en línea, como el valor de la
+                    propiedad <code class="code">template</code>. Esta plantilla define la <i>vista host</i> del
+                    componente.</li>
+                <li><code class="code">proveedores</code>: Un array de proveedores para los servicios que requiere el
+                    componente. En el ejemplo, esto le dice a Angular cómo proporcionar la instancia de <code
+                        class="code">HeroService</code> que el constructor del componente usa para obtener la lista de
+                    héroes para mostrar.</li>
+            </ul>
+
+            <h3>Plantillas y vistas</h3>
+
+            <p>Tu defines la vista de un componente con su plantilla complementaria. Una plantilla es una forma de HTML
+                que le dice a Angular cómo renderizar el componente.</p>
+
+            <p>Las vistas generalmente se organizan jerárquicamente, lo que le permite modificar o mostrar y ocultar
+                secciones enteras de UI o páginas como una unidad. La plantilla asociada inmediatamente con un
+                componente define la <i>vista host</i> de ese componente. El componente también puede definir una
+                <i>jerarquía de vistas</i>, que contiene <i>vistas incrustadas</i>, alojadas por otros componentes.
+            </p>
+
+            <div class="contenedor-code">
+                <!-- <img src="https://docs.angular.lat/generated/images/guide/architecture/component-tree.png" alt="Árbol de Componentes"> -->
+                <img src="./assets/arbol-de-componentes.png" alt="Árbol de Componentes">
+            </div>
+
+            <p>Una jerarquía de vistas puede incluir vistas de componentes en el mismo NgModule, pero también puede (y a
+                menudo lo hace) incluir vistas de componentes que están definidos en diferentes NgModules.</p>
+
+            <h3>Sintaxis de plantilla</h3>
+
+            <p>Una plantilla se ve como HTML normal, excepto que también contiene sintaxis de plantilla de Angular, que
+                altera el HTML según la lógica de su aplicación y el estado de la aplicación y datos del DOM. Tu
+                plantilla puede usar el <i>enlace de datos</i> para coordinar la aplicación y los datos del DOM,
+                <i>pipes</i> para transformar los datos antes de que se muestren y <i>directivas</i> para aplicar lógica
+                de aplicación a lo que es mostrado.
+            </p>
+
+            <p>Por ejemplo, aquí hay una plantilla para el <code class="code">HeroListComponent</code> del Tutorial.
+                (src/app/hero-list.component.html)</p>
+
+            <h3>Enlace de datos</h3>
+
+            <p>Sin un marco, sería responsable de introducir valores de datos en los controles HTML y convertir las
+                respuestas de los usuarios en acciones y actualizaciones de valores. Escribir esa lógica de empujar y
+                tirar a mano es tedioso, propenso a errores y una pesadilla de leer, como puede atestiguar cualquier
+                programador de JavaScript de front-end experimentado.</p>
+
+            <p>Angular admite <i>enlace de datos bidireccional</i>, un mecanismo para coordinar las partes de una
+                plantilla con las partes de un componente. Agregue marcado de enlace a la plantilla HTML para decirle a
+                Angular cómo conectar ambos lados.</p>
+
+            <p>El siguiente diagrama muestra las cuatro formas de marcado de enlace de datos. Cada formulario tiene una
+                dirección: al DOM, desde el DOM o ambos.</p>
+
+            <div class="contenedor-code">
+                <!-- <img src="https://docs.angular.lat/generated/images/guide/architecture/databinding.png" alt="databinding"> -->
+                <img src="./assets/databinding.png" alt="data binding">
+            </div>
+
+            <p>Enlace de datos bidireccional (utilizado principalmente en formularios basados ​​en plantillas) combina
+                la propiedad y la vinculación de eventos en una sola notación.</p>
+
+            <p>En el enlace bidireccional, un valor de propiedad de datos fluye al cuadro de entrada desde el componente
+                como con el enlace de propiedad. Los cambios del usuario también regresan al componente, restableciendo
+                la propiedad al último valor, como con la vinculación de eventos.</p>
+
+            <p>Angular procesa <i>todos</i> los enlaces de datos una vez para cada ciclo de eventos de JavaScript, desde
+                la raíz del árbol de componentes de la aplicación a través de todos los componentes secundarios.</p>
+
+            <div class="contenedor-code">
+                <!-- <img src="https://docs.angular.lat/generated/images/guide/architecture/component-databinding.png" alt="data binding componente"> -->
+                <img src="./assets/component-databinding.png" alt="data binding component">
+            </div>
+
+            <p>El enlace de datos juega un papel importante en la comunicación entre una plantilla y su componente, y
+                también es importante para la comunicación entre los componentes principal y secundario.</p>
+
+            <div class="contenedor-code">
+                <!-- <img src="https://docs.angular.lat/generated/images/guide/architecture/parent-child-binding.png" alt="parent child binding"> -->
+                <img src="./assets/parent-child-binding.png" alt="parent child binding">
+            </div>
+
+            <h3>Pipes</h3>
+
+            <p>Los pipes de Angular te permiten declarar transformaciones de valor de visualización en su plantilla
+                HTML. Una clase con el decorador <code class="code">@Pipe</code> define una función que transforma los
+                valores de entrada en valores de salida para mostrarlos en una vista.</p>
+
+            <p>Angular define varios pipes, como el pipe date y el pipe currency; para obtener una lista completa,
+                consulta la Lista de API de pipes. También puedes definir nuevos pipe.</p>
+
+            <p>Para especificar una transformación de valor en una plantilla HTML, usa el operador de tubería (|).</p>
+
+            <div class="contenedor-code">
+                <code class="code">{{interpolated_value | pipe_name}}</code>
+            </div>
+
+            <p>Puedes encadenar pipes, enviando la salida de una función de pipe para que sea transformada por otra
+                función de pipe. Un pipe también puede tomar argumentos que controlen cómo realiza su transformación.
+            </p>
+
+            <h3>Directivas</h3>
+
+            <p>Las plantillas de Angular son <i>dinámicas</i>. Cuando Angular los renderiza, transforma el DOM de
+                acuerdo con las instrucciones dadas por <i>directivas</i>. Una directiva es una clase con un decorador
+                <code class="code">@Directive()</code>.</p>
+
+            <p>Un componente es técnicamente una directiva. Sin embargo, los componentes son tan distintivos y
+                fundamentales para las aplicaciones de Angular que Angular define el decorador <code
+                    class="code">@Component()</code>, que extiende el decorador <code class="code">@Directive()</code>
+                con características orientadas a plantillas.</p>
+
+            <p>Además de los componentes, existen otros dos tipos de directivas: <i>estructural</i> y <i>atributo</i>.
+                Angular define una serie de directivas de ambos tipos, y puedes definir las tuyas propias usando el
+                decorador <code class="code">@Directive()</code>.</p>
+
+            <p>Al igual que para los componentes, los metadatos de una directiva asocian la clase decorada con un
+                elemento selector que usas para insertarlo en HTML. En las plantillas, las directivas suelen aparecer
+                dentro de una etiqueta de elemento como atributos, ya sea por nombre o como el destino de una asignación
+                o un enlace.</p>
+
+            <ul>
+                <li>
+                    Directivas estructurales * modifican el diseño agregando, quitando y reemplazando elementos en el
+                    DOM.
+                    <ul>
+                        <li>*ngFor="let i of list" es iterativo.</li>
+                        <li>*ngIf="condition" es un condiciona</li>
+                    </ul>
+                </li>
+                <li>
+                    Las directivas de atributos * alteran la apariencia o el comportamiento de un elemento existente. En
+                    las plantillas, se ven como atributos HTML normales, de ahí el nombre.
+                    <ul>
+                        <li>La directiva ngModel, que implementa el enlace de datos bidireccional, es un ejemplo de
+                            directiva de atributo. ngModel modifica el comportamiento de un elemento existente
+                            (típicamente la etiqueta input) estableciendo su propiedad de valor de visualización y respondiendo a
+                            eventos de cambio.</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+
+        <!-- <section class="main-section" id="Servicios_de_ID">
+            <header class="main-title">
+                <h2>Servicios de ID</h2>
+            </header>
+        </section>
+
+        <section class="main-section" id="Proximos_pasos">
+            <header class="main-title">
+                <h2>Proximos pasos</h2>
+            </header>
+        </section> -->
+
+        <section class="main-section" id="Referencia">
+            <header class="main-title">
+                <h2>Referencia</h2>
+            </header>
+
+            <p>Toda la documentación en esta página fue extraída de <a href="https://docs.angular.lat/">docs.angular</a></p>
+        </section>
+    </main>
+
+    <!-- <script src="./js/script.js"></script> -->
+</body>
+
+</html>
