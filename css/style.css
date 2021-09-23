@@ -31,6 +31,27 @@ body {
     color: var(--azul);
 }
 
+.cerrar {
+    position: absolute;
+    right: 20px;
+    top: 5px;
+    cursor: pointer;
+    transition: all .5s;
+    display: none;
+}
+
+.cerrar-active {
+    display: block;
+}
+
+.cerrar-icon {
+    display: block;
+    width: 40px;
+    text-align: center;
+    font-size: 30px;
+    color: rgba(255, 0, 0, .5);
+}
+
 .navbar {
     background-color: var(--azul);
     position: fixed;
@@ -134,4 +155,22 @@ body {
     display: block;
     margin: 0 auto;
     width: 70%;
+}
+
+@media screen and (max-width: 1000px) {
+    .main {
+        left: 0;
+        z-index: -1;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .navbar {
+        width: 100vw;
+        left: -100vh;
+    }
+
+    .navbar-active {
+        left: 0;
+    }
 }
