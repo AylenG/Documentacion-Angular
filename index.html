@@ -34,7 +34,7 @@
         <div id="toggle-btn" class="toggle-btn">
             <span class="toggle-btn-icon">&#9776;</span>
         </div>
-        
+
         <section class="main-section" id="Introduccion">
             <header>
                 <h2 class="main-title">Introduccion</h2>
@@ -265,8 +265,8 @@
             <p>El siguiente diagrama muestra cómo se relacionan estos conceptos básicos:</p>
 
             <div class="contenedor-code">
-                <!-- <img src="https://docs.angular.lat/generated/images/guide/architecture/overview2.png" alt="Diagrama de relación"> -->
-                <img src="./assets/diagrama.png" alt="Diagrama de relación">
+                <!-- <img class="main-img" src="https://docs.angular.lat/generated/images/guide/architecture/overview2.png" alt="Diagrama de relación"> -->
+                <img class="main-img" src="./assets/diagrama.png" alt="Diagrama de relación">
             </div>
 
             <ul>
@@ -360,8 +360,9 @@
                 compilación.</p>
 
             <div class="contenedor-code">
-                <!-- <img src="https://docs.angular.lat/generated/images/guide/architecture/compilation-context.png" alt="Contexto de compilación"> -->
-                <img src="./assets/contexto-compilacion.png" alt="Contexto de compilación">
+                <!-- <img class="main-img" src="https://docs.angular.lat/generated/images/guide/architecture/compilation-context.png" alt="Contexto de compilación"> -->
+                <img class="main-img" class="main-img" src="./assets/contexto-compilacion.png"
+                    alt="Contexto de compilación">
             </div>
 
             <p>Juntos, un componente y su plantilla definen una <i>vista</i>. Un componente puede contener una
@@ -372,8 +373,8 @@
             </p>
 
             <div class="contenedor-code">
-                <!-- <img src="https://docs.angular.lat/generated/images/guide/architecture/view-hierarchy.png" alt="Jerarquía de vista"> -->
-                <img src="./assets/jerarquia-de-vista.png" alt="Jerarquía de vista">
+                <!-- <img class="main-img" src="https://docs.angular.lat/generated/images/guide/architecture/view-hierarchy.png" alt="Jerarquía de vista"> -->
+                <img class="main-img" src="./assets/jerarquia-de-vista.png" alt="Jerarquía de vista">
             </div>
 
             <p>Cuando creas un componente, se asocia directamente con una sola vista, llamada <i>vista host</i>. La
@@ -400,7 +401,7 @@
                 </code>
             </div>
 
-            <div>
+            <div class="contenedor-code">
                 <code class="code">export class AppModule { }</code>
             </div>
 
@@ -424,13 +425,18 @@
                 JavaScript. Por ejemplo, el siguiente código importa el NgModule <code class="code">BrowserModule</code>
                 de la biblioteca <code class="code">platform-browser</code>.</p>
 
-            <code class="contenedor-code code">import { BrowserModule } from '@angular/platform-browser';</code>
+            <div class="contenedor-code">
+                <code class="code">import { BrowserModule } from '@angular/platform-browser';</code>
+            </div>
+
 
             <p>En el ejemplo del módulo raíz simple anterior, el módulo de la aplicación necesita material de <code
                     class="code">BrowserModule</code>. Para acceder a ese material, agrégalo a los metadatos <code
                     class="code">imports</code> de <code class="code">@NgModule</code> de esta manera.</p>
 
-            <code class="contenedor-code code">imports: [ BrowserModule ],</code>
+            <div class="contenedor-code">
+                <code class="code">imports: [ BrowserModule ],</code>
+            </div>
 
             <p>De esta manera, estás utilizando los sistemas de módulos Angular y JavaScript juntos. Aunque es fácil
                 confundir los dos sistemas, que comparten el vocabulario común de "importaciones" y "exportaciones", te
@@ -548,8 +554,8 @@
             </p>
 
             <div class="contenedor-code">
-                <!-- <img src="https://docs.angular.lat/generated/images/guide/architecture/component-tree.png" alt="Árbol de Componentes"> -->
-                <img src="./assets/arbol-de-componentes.png" alt="Árbol de Componentes">
+                <!-- <img class="main-img" src="https://docs.angular.lat/generated/images/guide/architecture/component-tree.png" alt="Árbol de Componentes"> -->
+                <img class="main-img" src="./assets/arbol-de-componentes.png" alt="Árbol de Componentes">
             </div>
 
             <p>Una jerarquía de vistas puede incluir vistas de componentes en el mismo NgModule, pero también puede (y a
@@ -582,8 +588,8 @@
                 dirección: al DOM, desde el DOM o ambos.</p>
 
             <div class="contenedor-code">
-                <!-- <img src="https://docs.angular.lat/generated/images/guide/architecture/databinding.png" alt="databinding"> -->
-                <img src="./assets/databinding.png" alt="data binding">
+                <!-- <img class="main-img" src="https://docs.angular.lat/generated/images/guide/architecture/databinding.png" alt="databinding"> -->
+                <img class="main-img" src="./assets/databinding.png" alt="data binding">
             </div>
 
             <p>Enlace de datos bidireccional (utilizado principalmente en formularios basados ​​en plantillas) combina
@@ -597,16 +603,16 @@
                 la raíz del árbol de componentes de la aplicación a través de todos los componentes secundarios.</p>
 
             <div class="contenedor-code">
-                <!-- <img src="https://docs.angular.lat/generated/images/guide/architecture/component-databinding.png" alt="data binding componente"> -->
-                <img src="./assets/component-databinding.png" alt="data binding component">
+                <!-- <img class="main-img" src="https://docs.angular.lat/generated/images/guide/architecture/component-databinding.png" alt="data binding componente"> -->
+                <img class="main-img" src="./assets/component-databinding.png" alt="data binding component">
             </div>
 
             <p>El enlace de datos juega un papel importante en la comunicación entre una plantilla y su componente, y
                 también es importante para la comunicación entre los componentes principal y secundario.</p>
 
             <div class="contenedor-code">
-                <!-- <img src="https://docs.angular.lat/generated/images/guide/architecture/parent-child-binding.png" alt="parent child binding"> -->
-                <img src="./assets/parent-child-binding.png" alt="parent child binding">
+                <!-- <img class="main-img" src="https://docs.angular.lat/generated/images/guide/architecture/parent-child-binding.png" alt="parent child binding"> -->
+                <img class="main-img" src="./assets/parent-child-binding.png" alt="parent child binding">
             </div>
 
             <h3>Pipes</h3>

@@ -3,6 +3,11 @@
 :root {
     --azul: #1976d2;
     --negro: #515151;
+    --gris: #e7e7e7;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
@@ -34,8 +39,7 @@ body {
     width: 350px;
     height: 100vh;
     overflow-y: auto;
-    transition: all .5s;
-    padding-right: 100px;
+    transition: left .5s;
 }
 
 .navbar-active {
@@ -49,6 +53,10 @@ body {
 .navbar-titulo {
     color: white;
     margin-bottom: 0;
+}
+
+.navbar-img {
+    width: 250px;
 }
 
 .menu {
@@ -76,22 +84,54 @@ body {
 }
 
 .main {
-    background-color: aqua;
     position: absolute;
     left: 350px;
     padding: 30px 50px;
-    transition: all .5s;
+    transition: left .5s;
 }
 
 .main-extendido {
     left: 0;
 }
 
-.main-title {
-    background-color: violet;
-    
+.main-section {
+    padding: 20px 0px;
+    border-bottom: 2px solid var(--azul);
 }
 
-.navbar-img {
-    width: 250px;
+.main-title {
+    font-size: 30px;
+    margin: 10px 0;
+}
+
+.main-section h3 {
+    font-size: 22px;
+    margin-top: 40px;
+}
+
+.main-section p,
+.main-section ul,
+.main-section ol {
+    font-size: 16px;
+    line-height : 25px;
+    text-align: justify;
+}
+
+.contenedor-code {
+    background-color: var(--gris);
+    margin: 25px auto;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.code {
+    font-family: monospace;
+    font-size: 16px;
+    line-height : 25px;
+}
+
+.main-img {
+    display: block;
+    margin: 0 auto;
+    width: 70%;
 }
