@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+:root {
+    --azul: #1976d2;
+    --negro: #515151;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+}
+
+.toggle-btn {
+    position: fixed;
+    margin-left: 5px;
+    left: 350px;
+    top: 5px;
+    cursor: pointer;
+    transition: all .5s;
+}
+
+.toggle-btn-icon {
+    display: block;
+    width: 40px;
+    text-align: center;
+    font-size: 30px;
+    color: var(--azul);
+}
+
+.navbar {
+    background-color: var(--azul);
+    position: fixed;
+    top: 0;
+    left: -350px;
+    width: 350px;
+    height: 100vh;
+    overflow-y: auto;
+    transition: all .5s;
+    padding-right: 100px;
+}
+
+.navbar-active {
+    left: 0;
+}
+
+.navbar-tema {
+    text-align: center;
+}
+
+.navbar-titulo {
+    color: white;
+    margin-bottom: 0;
+}
+
+.menu {
+    margin-top: 20px;
+    padding: 0;
+}
+
+.menu-item {
+    list-style: none;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, .5);
+    padding: 25px 0px;
+    font-size: 20px;
+    text-transform: uppercase;
+    transition: all .5s;
+}
+
+.menu-item:hover {
+    background-color: rgb(21, 88, 156);
+}
+
+.nav-link {
+    text-decoration: none;
+    color: white;
+}
+
+.main {
+    background-color: aqua;
+    position: absolute;
+    left: 350px;
+    padding: 30px 50px;
+    transition: all .5s;
+}
+
+.main-extendido {
+    left: 0;
+}
+
+.main-title {
+    background-color: violet;
+    
+}
+
+.navbar-img {
+    width: 250px;
+}

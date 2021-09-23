@@ -11,12 +11,7 @@
 </head>
 
 <body>
-    <nav id="navbar" class="navbar">
-        <!-- Con esto se crea el ícono de"hamburguesa" para desplegar el menú -->
-        <!-- <div class="toggle-btn">
-            <span class="toggle-btn-icon">&#9776;</span>
-        </div> -->
-
+    <nav id="navbar" class="navbar navbar-active">
         <header class="navbar-tema">
             <h1 class="navbar-titulo">Documentación</h1>
             <img class="navbar-img" src="./assets/angular.png" alt="Angular">
@@ -35,9 +30,14 @@
     </nav>
 
     <main id="main-doc" class="main">
+        <!-- Con esto se crea el ícono de"hamburguesa" para desplegar el menú -->
+        <div id="toggle-btn" class="toggle-btn">
+            <span class="toggle-btn-icon">&#9776;</span>
+        </div>
+        
         <section class="main-section" id="Introduccion">
-            <header class="main-title">
-                <h2>Introduccion</h2>
+            <header>
+                <h2 class="main-title">Introduccion</h2>
             </header>
             <p>Angular es un framework de diseño de aplicaciones y plataforma de desarrollo para crear aplicaciones
                 de una sola página eficientes y sofisticadas.</p>
@@ -48,8 +48,8 @@
         </section>
 
         <section class="main-section" id="Instalacion">
-            <header class="main-title">
-                <h2>Instalacion</h2>
+            <header>
+                <h2 class="main-title">Instalacion</h2>
             </header>
             <h3>Prerrequisitos</h3>
 
@@ -125,8 +125,8 @@
         </section>
 
         <section class="main-section" id="Conceptos_basicos">
-            <header class="main-title">
-                <h2>Conceptos basicos</h2>
+            <header>
+                <h2 class="main-title">Conceptos basicos</h2>
             </header>
             <p>Angular es una plataforma y un framework para crear aplicaciones de una sola página en el lado del
                 cliente usando HTML y TypeScript. Angular está escrito en TypeScript. Implementa la funcionalidad básica
@@ -287,8 +287,8 @@
         </section>
 
         <section class="main-section" id="Modulos">
-            <header class="main-title">
-                <h2>Modulos</h2>
+            <header>
+                <h2 class="main-title">Modulos</h2>
             </header>
 
             <p>Las aplicaciones Angular son modulares y Angular tiene su propio sistema de modularidad llamado
@@ -438,8 +438,8 @@
         </section>
 
         <section class="main-section" id="Componentes">
-            <header class="main-title">
-                <h2>Componentes</h2>
+            <header>
+                <h2 class="main-title">Componentes</h2>
             </header>
 
             <p>Un <i>componente</i> controla una parte en pantalla llamada <i>vista</i>. Por ejemplo, los componentes
@@ -632,7 +632,8 @@
 
             <p>Las plantillas de Angular son <i>dinámicas</i>. Cuando Angular los renderiza, transforma el DOM de
                 acuerdo con las instrucciones dadas por <i>directivas</i>. Una directiva es una clase con un decorador
-                <code class="code">@Directive()</code>.</p>
+                <code class="code">@Directive()</code>.
+            </p>
 
             <p>Un componente es técnicamente una directiva. Sin embargo, los componentes son tan distintivos y
                 fundamentales para las aplicaciones de Angular que Angular define el decorador <code
@@ -663,7 +664,8 @@
                     <ul>
                         <li>La directiva ngModel, que implementa el enlace de datos bidireccional, es un ejemplo de
                             directiva de atributo. ngModel modifica el comportamiento de un elemento existente
-                            (típicamente la etiqueta input) estableciendo su propiedad de valor de visualización y respondiendo a
+                            (típicamente la etiqueta input) estableciendo su propiedad de valor de visualización y
+                            respondiendo a
                             eventos de cambio.</li>
                     </ul>
                 </li>
@@ -671,27 +673,28 @@
         </section>
 
         <!-- <section class="main-section" id="Servicios_de_ID">
-            <header class="main-title">
-                <h2>Servicios de ID</h2>
+            <header>
+                <h2 class="main-title">Servicios de ID</h2>
             </header>
         </section>
 
         <section class="main-section" id="Proximos_pasos">
-            <header class="main-title">
-                <h2>Proximos pasos</h2>
+            <header>
+                <h2 class="main-title">Proximos pasos</h2>
             </header>
         </section> -->
 
         <section class="main-section" id="Referencia">
-            <header class="main-title">
-                <h2>Referencia</h2>
+            <header>
+                <h2 class="main-title">Referencia</h2>
             </header>
 
-            <p>Toda la documentación en esta página fue extraída de <a href="https://docs.angular.lat/">docs.angular</a></p>
+            <p>Toda la documentación en esta página fue extraída de <a href="https://docs.angular.lat/">docs.angular</a>
+            </p>
         </section>
     </main>
 
-    <!-- <script src="./js/script.js"></script> -->
+    <script src="./js/script.js"></script>
 </body>
 
 </html>
